@@ -1,0 +1,16 @@
+pipeline{
+
+agent any
+stages{
+    stage('get_code'){
+        steps{
+           git branch: 'main', url: 'https://github.com/RaunakDC/re_post_story.git'
+        }
+    }
+    stage('run_python_code'){
+        steps{
+            sh 'sudo python3 sandesh.py'
+        }
+    }
+  }
+}
